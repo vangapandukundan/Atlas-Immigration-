@@ -48,11 +48,11 @@ export default function Home() {
     }
   ];
 
-  // Auto-play the slider every 6 seconds
+  // Auto-play the slider every 12 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
+    }, 12000);
     return () => clearInterval(timer);
   }, [slides.length]);
 
