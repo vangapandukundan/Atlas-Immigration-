@@ -141,7 +141,7 @@ export default function Career() {
             <h3 style={{ color: C, margin: '0 0 0.25rem 0', fontSize: '1.5rem' }}>{journeySteps[journeyTab].title}</h3>
             <p style={{ color: P, fontWeight: 600, fontSize: '0.9rem', marginBottom: '1.25rem' }}>{journeySteps[journeyTab].sub}</p>
             <p style={{ color: M, marginBottom: '1.5rem', lineHeight: '1.65', fontSize: '0.9rem' }}>{journeySteps[journeyTab].details}</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', background: '#f8f7ff', padding: '1rem 1.25rem', borderRadius: '10px', border: '1px solid #e5e7eb', marginBottom: '1.5rem' }}>
+            <div className="stats-grid-3col" style={{ background: '#f8f7ff', padding: '1rem 1.25rem', borderRadius: '10px', border: '1px solid #e5e7eb', marginBottom: '1.5rem' }}>
               {[['DURATION', journeySteps[journeyTab].time], ['FILE / REVIEW', journeySteps[journeyTab].docs], ['RESPONSE', journeySteps[journeyTab].response]].map(([label, val]) => (
                 <div key={label}>
                   <span style={{ fontSize: '0.7rem', color: M, display: 'block', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</span>
@@ -163,14 +163,14 @@ export default function Career() {
           <h2 style={{ color: C }}>Life at Atlas</h2>
           <div className="accent-line"></div>
           <p className="section-subtitle">A small glimpse into our team interactions, workshop days, and collaborative workspaces.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', gridTemplateRows: 'repeat(2, 180px)' }}>
+          <div className="life-grid">
             {[
               { img: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&auto=format&fit=crop&q=60', label: 'Workspace Layout', span: 2 },
               { img: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&auto=format&fit=crop&q=60', label: 'Collaborative Sprints', span: 1 },
               { img: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&auto=format&fit=crop&q=60', label: 'Team Ideations', span: 1 },
               { img: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&auto=format&fit=crop&q=60', label: 'Weekly Standup', span: 2 }
             ].map((photo, idx) => (
-              <div key={idx} style={{ gridColumn: `span ${photo.span}`, borderRadius: '14px', overflow: 'hidden', position: 'relative' }}>
+              <div key={idx} className="life-photo" style={{ gridColumn: `span ${photo.span}` }}>
                 <img src={photo.img} alt={photo.label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.5s ease' }}
                   onMouseOver={e => e.currentTarget.style.transform = 'scale(1.06)'}
                   onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
@@ -203,7 +203,7 @@ export default function Career() {
             <ul style={{ color: M, paddingLeft: '1.25rem', marginBottom: '2rem', lineHeight: '1.8', fontSize: '0.9rem' }}>
               {canadaData[canadaTab].offer.map((item, idx) => <li key={idx}>{item}</li>)}
             </ul>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', borderTop: '1px solid #e5e7eb', paddingTop: '1.5rem' }}>
+            <div className="stats-grid-3col" style={{ borderTop: '1px solid #e5e7eb', paddingTop: '1.5rem' }}>
               {[['Success Rate', canadaData[canadaTab].stats.success], ['Avg Processing', canadaData[canadaTab].stats.time], ['Satisfied Clients', canadaData[canadaTab].stats.clients]].map(([label, val]) => (
                 <div key={label} style={{ textAlign: 'center' }}>
                   <span style={{ fontSize: '1.35rem', fontWeight: 700, background: 'linear-gradient(135deg, #8b5cf6, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', display: 'block' }}>{val}</span>
@@ -221,7 +221,7 @@ export default function Career() {
           <h2 style={{ color: C }}>Our Work Culture</h2>
           <div className="accent-line"></div>
           <p className="section-subtitle">We value expertise, active knowledge sharing, and empathy. Our core operations are backed by key cultural anchors.</p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
+          <div className="culture-grid-4col">
             {[
               { title: 'Collaborative Excellence', desc: 'We believe in the power of teamwork, shared client history, and open peer updates.' },
               { title: 'Continuous Learning', desc: 'We finance courseware, regulatory certifications, and technical workshops.' },

@@ -60,8 +60,7 @@ export default function About() {
           </p>
 
           <motion.div 
-            className="impact-stats" 
-            style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}
+            className="impact-stats"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
@@ -203,7 +202,7 @@ export default function About() {
           </p>
 
           <motion.div 
-            style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}
+            className="team-grid"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}

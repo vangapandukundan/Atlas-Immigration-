@@ -251,7 +251,7 @@ export default function Countries() {
             Click "View Details" on any country card to explore visa types, immigration process, requirements, and benefits.
           </p>
 
-          <div className="countries-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+          <div className="countries-grid">
             {countries.map((country) => (
               <div
                 key={country.name}

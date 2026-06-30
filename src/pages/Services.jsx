@@ -278,7 +278,7 @@ export default function Services() {
             Hear from some of our clients who achieved their immigration dreams.
           </p>
 
-          <div className="testimonials-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
+          <div className="testimonials-grid">
             <div className="testimonial-card glass-card">
               <p className="testimonial-quote">"Atlas Immigration made my Canadian PR process incredibly smooth. Their team guided me through every step with expertise."</p>
               <div className="testimonial-author-wrapper">
