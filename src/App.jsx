@@ -7,10 +7,10 @@ import Services from './pages/Services';
 import Career from './pages/Career';
 import Contact from './pages/Contact';
 import Countries from './pages/Countries';
-import Lenis from 'lenis';
-import { AnimatePresence, motion } from 'framer-motion';
+import Lenis from 'lenis'; // lenis library is used here for smooth scrolling effect
+import { AnimatePresence, motion } from 'framer-motion'; // framer-motion library is used here for animations
 
-function App() {
+function App() { // This is the main component of the application
   const [currentPath, setCurrentPath] = useState(window.location.hash || '#/');
   const [mousePosition, setMousePosition] = useState({ x: -200, y: -200 });
 
@@ -50,7 +50,7 @@ function App() {
     };
   }, []);
 
-  // Simple router switch statement
+  // Simple router switch statement to mentioned in the home page 
   const renderPage = () => {
     switch (currentPath) {
       case '#/':
