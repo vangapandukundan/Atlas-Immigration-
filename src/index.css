@@ -281,31 +281,52 @@ a {
 
 .menu-toggle {
   display: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 0;
+  z-index: 1001;
 }
 
 .menu-toggle span {
+  position: absolute;
+  left: 3px;
   display: block;
   width: 24px;
   height: 2px;
   background-color: #ffffff;
-  margin: 5px 0;
-  transition: all var(--transition-normal);
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: 2px;
+}
+
+.menu-toggle span:nth-child(1) {
+  top: 7px;
+}
+
+.menu-toggle span:nth-child(2) {
+  top: 14px;
+}
+
+.menu-toggle span:nth-child(3) {
+  top: 21px;
 }
 
 .menu-toggle.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: rotate(45deg);
+  top: 14px;
 }
 
 .menu-toggle.open span:nth-child(2) {
   opacity: 0;
+  width: 0;
 }
 
 .menu-toggle.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 14px;
 }
 
 /* ─── Page Wrapper ─── */
@@ -1903,6 +1924,7 @@ a {
 }
 
 .life-photo {
+  position: relative;
   border-radius: 14px;
   overflow: hidden;
   background: #e5e7eb;
@@ -2543,8 +2565,7 @@ a {
   }
 
   .menu-toggle {
-    display: flex;
-    flex-direction: column;
+    display: block !important;
   }
 
   html, body, .page-wrapper {
@@ -2732,6 +2753,11 @@ a {
 
   .modal-card {
     max-height: 95vh;
+  }
+
+  .timeline-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
   }
 }
 
